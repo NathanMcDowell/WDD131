@@ -1,0 +1,36 @@
+:root {
+  --bg: #f7f7f7;
+  --fg: #222;
+  --card: #fff;
+  --accent: #3a7afe;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+}
+
+.card {
+  background: var(--card);
+  padding: 1.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  width: min(90vw, 480px);
+}
+
+.controls { display: flex; gap: .5rem; margin: .75rem 0; }
+input { flex: 1; padding: .5rem .75rem; }
+button { padding: .5rem .75rem; border: 1px solid #ccc; border-radius: .5rem; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+
+/* Dark theme toggles via a class on <body> */
+.dark {
+  --bg: #0e1116;
+  --fg: #f3f4f6;
+  --card: #161a22;
+}
