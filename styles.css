@@ -1,0 +1,21 @@
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 650px;
+    margin: 0 auto;
+}
+header{
+    color: white;
+    background-color: blue;
+    padding: 0.5em;
+}
+header > h2{
+    font-size: 1em;
+    margin-top: 0.2em;
+}
+header > h1{
+    margin-bottom: 0;
+}
+.highlight{
+    background-color: salmon;
+}
