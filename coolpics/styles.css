@@ -1,0 +1,30 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+header {
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: gray;
+    gap: 20px;
+}
+img {
+    width: 100%;
+}
+
+@media screen and (min-width: 500px){
+    main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 750px){
+    main{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
