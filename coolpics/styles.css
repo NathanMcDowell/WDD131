@@ -12,9 +12,10 @@ main {
     grid-template-columns: 1fr;
     background-color: gray;
     gap: 20px;
+    padding: 20px;
 }
 img {
-    width: 100%;
+    max-width: 100%;
 }
 
 @media screen and (min-width: 500px){
