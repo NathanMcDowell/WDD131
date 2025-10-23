@@ -11,4 +11,3 @@ function changeButton(){
     button.classList.toggle("change");
     nav.classList.toggle("show")
 }
-
