@@ -14,10 +14,10 @@ const grades = ['A', 'B', 'A'];
 function listGrades(letter) {
     
     if (letter == 'A') {
-        return '4.0'
+        return 4.0
     }
     if (letter == 'B') {
-        return '3.0'
+        return 3.0
     }
 }
 
@@ -25,3 +25,20 @@ const gradesHtml = grades.map(listGrades)
 document.querySelector("#myListTwo").innerHTML = gradesHtml.join(", ")
 
 //Activity 3
+const gpaPoints = grades.map(listGrades)
+const pointsTotal = gpaPoints.reduce(function (total, item){
+    return total + item
+});
+    const gpa = pointsTotal / gpaPoints.length;
+console.log(gpa);
+
+// Activity 4
+const fruits = ['watermelon', 'peach', 'apple', 'tomato', 'grape'];
+const short_fruits = fruits.filter(fruit => fruit.length < 6);
+console.log(short_fruits);
+
+// Activity 5
+const numbers = [12, 34, 21, 54];
+const luckyNumber = 21;
+const luckyIndex = numbers.indexOf(luckyNumber)
+console.log(luckyIndex)
