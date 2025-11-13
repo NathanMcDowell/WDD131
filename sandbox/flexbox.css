@@ -17,7 +17,6 @@ max-width: 100%;
 .main-nav {
 list-style-type: none;
 display: flex;
-flex-flow: row;
 gap: 1em;
 justify-content: flex-end;
 }
@@ -25,4 +24,20 @@ justify-content: flex-end;
 hr{
 margin-top: 50px;
 }
-              
+
+@media screen and (min-width: 700px) {
+    .media-card {
+        display: flex;
+        gap: 1em;
+    }
+    .gallery {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1em;
+    }
+    .gallery > .media-card {
+        flex: 1 0 45%;
+        display: flex;
+        align-items: center;
+    }
+}
