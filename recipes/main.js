@@ -24,8 +24,6 @@ function tagsTemplate(tags){
 }
 function ratingTemplate(rating) {
 	// begin building an html string using the ratings HTML written earlier as a model.
-	console.log("Running rating")
-    console.log(rating)
     let html = `<span
 	class="rating"
 	role="img"
@@ -49,7 +47,17 @@ function ratingTemplate(rating) {
 	// return the html string
 	return html
 }
+function filterRecipes(query){
+    const searchBar = document.querySelector("#search-input");
+    const searchInput = searchBar.value;
+    
+}
+
+document.querySelector("#search-button").addEventListener("click", filterRecipes)
+
 
 const randomNum = Math.floor(Math.random()*(recipes.length));
 const testRecipeContent = recipeTemplate(recipes[randomNum]);
 document.querySelector("section").innerHTML = testRecipeContent;
+
+
