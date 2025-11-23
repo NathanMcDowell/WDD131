@@ -1,8 +1,6 @@
 import recipes from "./recipes.mjs";
 
 function recipeTemplate(recipe) {
-    console.log("recipeTemplate has started")
-    console.log(recipes.length)
     return `<figure class="recipe">
 	<img src="${recipe.image}" alt="${recipe.name}" />
 	<figcaption>
@@ -11,17 +9,7 @@ function recipeTemplate(recipe) {
 		</ul>
 		<h2><a href="#">${recipe.name}</a></h2>
 		<p class="recipe__ratings">
-			<span
-				class="rating"
-				role="img"
-				aria-label="Rating: 3 out of 5 stars"
-			>
-				<span aria-hidden="true" class="icon-star">⭐</span>
-				<span aria-hidden="true" class="icon-star">⭐</span>
-				<span aria-hidden="true" class="icon-star">⭐</span>
-				<span aria-hidden="true" class="icon-star">⭐</span>
-				<span aria-hidden="true" class="icon-star-empty">☆</span>
-			</span>
+			${ratingTemplate(recipe.rating)}
 		</p>
 		<p class="recipe-description">${recipe.description}</p>
 </figcaption>
@@ -34,8 +22,34 @@ function tagsTemplate(tags){
     });
     return tagHtml
 }
+function ratingTemplate(rating) {
+	// begin building an html string using the ratings HTML written earlier as a model.
+	console.log("Running rating")
+    console.log(rating)
+    let html = `<span
+	class="rating"
+	role="img"
+	aria-label="Rating: ${rating} out of 5 stars"
+>`
+// our ratings are always out of 5, so create a for loop from 1 to 5
+    for (let i = 0; i < 5; i++) {
+        if(rating > i) {
+            html += `<span aria-hidden="true" class="icon-star">⭐</span>`
+        } else {
+            html += `<span aria-hidden="true" class="icon-star-empty"> ☆</span>`
+        }
+    }
+		// check to see if the current index of the loop is less than our rating
+		// if so then output a filled star
+
+		// else output an empty star <span aria-hidden="true" class="icon-star">⭐</span>
+
+	// after the loop, add the closing tag to our string
+	html += `</span>`
+	// return the html string
+	return html
+}
+
 const randomNum = Math.floor(Math.random()*(recipes.length));
 const testRecipeContent = recipeTemplate(recipes[randomNum]);
 document.querySelector("section").innerHTML = testRecipeContent;
-
-console.log(tagsTemplate(recipes[0].tags))
