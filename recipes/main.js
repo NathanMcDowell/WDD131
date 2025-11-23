@@ -47,10 +47,11 @@ function ratingTemplate(rating) {
 	// return the html string
 	return html
 }
-function filterRecipes(query){
+function filterRecipes(){
     const searchBar = document.querySelector("#search-input");
     const searchInput = searchBar.value;
-    
+    const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchInput.toLowerCase()))
+    console.log(filteredRecipes)
 }
 
 document.querySelector("#search-button").addEventListener("click", filterRecipes)
