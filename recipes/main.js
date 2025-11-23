@@ -47,12 +47,20 @@ function ratingTemplate(rating) {
 	// return the html string
 	return html
 }
-
+function compareFn(a, b) {
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        return -1;
+    } else if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        return 1;
+    }
+    return 0;
+}
 function filterRecipes(){
     const searchBar = document.querySelector("#search-input");
     const searchInput = searchBar.value;
     const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchInput.toLowerCase()))
-    return filteredRecipes;
+    const sortedFilteredRecipes = filteredRecipes.sort(compareFn)
+    return sortedFilteredRecipes;
 }
 function displaySearchResults(){
     const filteredRecipes = filterRecipes();
