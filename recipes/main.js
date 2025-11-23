@@ -6,9 +6,8 @@ function recipeTemplate(recipe) {
     return `<figure class="recipe">
 	<img src="${recipe.image}" alt="${recipe.name}" />
 	<figcaption>
-		<ul class="recipe__tags">
-			<li>Dessert</li>
-			<li>Fruit</li>
+		<ul class="tags">
+			${tagsTemplate(recipe.tags)}
 		</ul>
 		<h2><a href="#">${recipe.name}</a></h2>
 		<p class="recipe__ratings">
@@ -28,6 +27,15 @@ function recipeTemplate(recipe) {
 </figcaption>
 </figure>`;
 }
+function tagsTemplate(tags){
+    let tagHtml = ""
+    tags.forEach(tag => {
+        tagHtml += `<li>${tag}</li>`
+    });
+    return tagHtml
+}
 const randomNum = Math.floor(Math.random()*(recipes.length));
 const testRecipeContent = recipeTemplate(recipes[randomNum]);
 document.querySelector("section").innerHTML = testRecipeContent;
+
+console.log(tagsTemplate(recipes[0].tags))

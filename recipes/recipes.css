@@ -50,8 +50,20 @@ header {
     flex-direction: column;
     gap: 5px;
 }
-.recipe .tag {
-    width: 100px;
+ul {
+    font-family: var(--primary-font);
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+li {
+    list-style-type: none;
+    border: 2px black solid;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 2px;
+    width: 125px;
+    
 }
 .recipe .tag p{
     border: 2px black solid;
