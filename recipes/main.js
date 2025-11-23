@@ -47,14 +47,21 @@ function ratingTemplate(rating) {
 	// return the html string
 	return html
 }
+
 function filterRecipes(){
     const searchBar = document.querySelector("#search-input");
     const searchInput = searchBar.value;
     const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchInput.toLowerCase()))
-    console.log(filteredRecipes)
+    return filteredRecipes;
+}
+function displaySearchResults(){
+    const filteredRecipes = filterRecipes();
+    const recipesHtml = filteredRecipes.map(recipeTemplate)
+    document.querySelector("section").innerHTML = recipesHtml.join("");
 }
 
-document.querySelector("#search-button").addEventListener("click", filterRecipes)
+
+document.querySelector("#search-button").addEventListener("click", displaySearchResults)
 
 
 const randomNum = Math.floor(Math.random()*(recipes.length));
