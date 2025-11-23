@@ -58,7 +58,9 @@ function compareFn(a, b) {
 function filterRecipes(){
     const searchBar = document.querySelector("#search-input");
     const searchInput = searchBar.value;
-    const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchInput.toLowerCase()))
+    const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+    recipe.description.toLowerCase().includes(searchInput.toLowerCase()) ||
+    recipe.tags.find((tag)=> tag).toLowerCase().includes(searchInput.toLowerCase()))
     const sortedFilteredRecipes = filteredRecipes.sort(compareFn)
     return sortedFilteredRecipes;
 }
