@@ -41,7 +41,7 @@ header {
     padding: 0;
 }
 
-section {
+.recipe {
     margin: 20px 0 20px 0;
     border: 2px black solid;
     border-radius: 5px;
@@ -50,10 +50,10 @@ section {
     flex-direction: column;
     gap: 5px;
 }
-section .tag {
+.recipe .tag {
     width: 100px;
 }
-section .tag p{
+.recipe .tag p{
     border: 2px black solid;
     font-size: 1.5em;
     text-align: center;
@@ -87,10 +87,10 @@ p {
 }
 
 @media screen and (min-width: 700px) {
-    section {
+    .recipe {
         flex-direction: row;
     }
-    section img {
+    .recipe img {
         max-width: 50%;
     }
     .recipe-description {
