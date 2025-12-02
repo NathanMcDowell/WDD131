@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+img {
+    width: 100px;
+}
+header {
+    border-bottom: 2px solid black;
+    display: flex;
+}
+header ul {
+    list-style-type: none;
+    display: inline;
+    
+}
+li{
+    display: inline;
+
+}
+a {
+    color: black;
+}
+body {
+    font-family: "Aldritch", monospace;
+}
