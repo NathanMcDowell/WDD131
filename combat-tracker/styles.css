@@ -1,28 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
-img {
-    width: 100px;
+:root {
+    --primary-color: #36393A;
+    --secondary-color: #6EAD5F;
+    --accent-color: #960200;
+    --background-color: #E2DADB;
 }
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+body {
+    font-family: "Aldritch", monospace;
+    background-color: var(--background-color);
+    margin: 0;
+}
+main{
+    padding: 5px;
+}
+header {
+    border-bottom: 2px solid black;
+    display: flex;
+    margin-bottom: 20px;
+    background-color: var(--secondary-color);
+    padding: 5px;
+}
+header img{
+    width: 100px;
+    border: 2px  solid var(--primary-color);
+    margin: 5px;
+}
+nav {
+
+}
+
+nav ul {
+    list-style-type: none;
+    display: inline;
+}
+li{
+    display: inline;
+    
+}
+a {
+    color: var(--accent-color);
+}
+div {
+    border: 1px darkorange solid;
+}
+
+#character-creation div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+#character-creation {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#character-tracker {
+    border: 1px solid var(--primary-color);
+}
+#damage-setter {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+}
+#initiative-list {
+    min-height: 500px;
+    border: none;
+}
+#hp, #dex-roll {
+    width: 50px;
+}
+button {
+    height: 25px;
+    
+}
+
+/* Rules Page CSS */
 #players-handbook-cover {
     width: 200px;
     float: right;
     margin-left: 20px;
 }
-header {
-    border-bottom: 2px solid black;
-    display: flex;
-}
-header ul {
-    list-style-type: none;
-    display: inline;
-    
-}
-li{
-    display: inline;
-
-}
-a {
-    color: black;
-}
-body {
-    font-family: "Aldritch", monospace;
+p {
+    max-width: 70ch;
 }
