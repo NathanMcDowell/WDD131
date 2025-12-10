@@ -26,10 +26,6 @@ header img{
     border: 2px  solid var(--primary-color);
     margin: 5px;
 }
-nav {
-
-}
-
 nav ul {
     list-style-type: none;
     display: inline;
@@ -44,7 +40,15 @@ a {
 div {
     border: 1px darkorange solid;
 }
-
+#initiative-list {
+    border: none;
+    border-collapse: collapse;
+    height: auto;
+}
+td, th {
+    vertical-align: top;
+    padding-right: 10px;
+}
 #character-creation div {
     display: flex;
     flex-direction: column;
@@ -65,10 +69,7 @@ div {
     border: none;
     border-bottom: 1px solid var(--primary-color);
 }
-#initiative-list {
-    min-height: 500px;
-    border: none;
-}
+
 #hp, #dex-roll {
     width: 50px;
 }
