@@ -22,13 +22,13 @@ function initiativeHtmlMaker()
             <th>Resistances</th>
         </tr>
     </thead>
-    <tbody>`
-    const allItems = Object.entries(localStorage);
-    // console.log("allItems:");
-    // console.log(allItems);
-    allItems.slice().reverse().forEach(([key, value]) => {
+    <tbody>`;
+    const allItems = Object.entries(localStorage).sort((a, b) => {
+    const ca = JSON.parse(a[1]);
+    const cb = JSON.parse(b[1]);
+    return cb.roll - ca.roll});
+    allItems.slice().forEach(([key, value]) => {
         const character = JSON.parse(value)
-        // console.log(character)
         html += `<tr>
         <td><button class="damage-button ${character.name}">Damage</button></td>
         <td><button class="heal-button ${character.name}" >Heal</button></td>
@@ -115,7 +115,12 @@ function hpHandler(event)
     allItems.slice().reverse().forEach(([key, value]) => {
         const character = JSON.parse(value);
         const resistance = character.resistances;
-        if (damageType == resistance && isDamage){damage /= 2} // Halves for resistance
+        if (damageType == resistance && isDamage || 
+            ((damageType == "Piercing" || damageType == "Bludgeoning" || 
+                damageType == "Slashing") && resistance == "B-P-S")) // Halves for resistance
+        {
+            damage /= 2
+        }
 
         if(event.target.classList.contains(character.name))
         {
