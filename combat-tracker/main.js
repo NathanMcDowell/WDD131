@@ -24,14 +24,14 @@ function initiativeHtmlMaker()
     </thead>
     <tbody>`
     const allItems = Object.entries(localStorage);
-    console.log("allItems:");
-    console.log(allItems);
+    // console.log("allItems:");
+    // console.log(allItems);
     allItems.slice().reverse().forEach(([key, value]) => {
         const character = JSON.parse(value)
-        console.log(character)
+        // console.log(character)
         html += `<tr>
-        <td><button class="damage-button" id="${character.name}">Damage</button></td>
-        <td><button class="heal-button">Heal</button></td>
+        <td><button class="damage-button ${character.name}">Damage</button></td>
+        <td><button class="heal-button ${character.name}" >Heal</button></td>
         <td>${character.name}</td>
         <td>${character.hp}</td>
         <td>${character.resistances}</td>
@@ -74,29 +74,34 @@ function deleteAll()
     clearInputs();
     submitHandler();
 }
-function damageHandler()
+function hpHandler(event)
 {
+    let isDamage = true;
+    if(event.target.classList.contains("damage-button")){
+        isDamage = true;
+    } else if(event.target.classList.contains("heal-button")){
+        isDamage = false;
+    }
     
-}
-function testDamageHandler(event)
-{
-    console.log("testDamageHandler activated", event.target.id);
+    let damage = document.querySelector("#damage-input").value;
+    if (!isDamage)
+    {
+        damage *= -1;
+    }
     const allItems = Object.entries(localStorage);
     allItems.slice().reverse().forEach(([key, value]) => {
         const character = JSON.parse(value)
-        console.log(character)
-        if(character.name == event.target.id)
+        if(event.target.classList.contains(character.name))
         {
-            character.hp -= 1;
-            console.log(character.hp);
+            character.hp -= damage;
             localStorage.setItem(character.name, JSON.stringify(character));
-            initiativeHtmlMaker();
+            
             trackerBox.innerHTML = initiativeHtmlMaker();
         }
     })
-    
-    
 }
 document.querySelector("#submit-button").addEventListener("click", submitHandler)
 document.querySelector("#reset-button").addEventListener("click", deleteAll)
-trackerBox.addEventListener("click", testDamageHandler)
+trackerBox.addEventListener("click", hpHandler)
+
+trackerBox.innerHTML = initiativeHtmlMaker();
