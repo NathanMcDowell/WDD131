@@ -1,7 +1,7 @@
 :root {
     --primary-color: #36393A;
     --secondary-color: #6EAD5F;
-    --accent-color: #960200;
+    --accent-color: #550403;
     --background-color: #E2DADB;
 }
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
@@ -86,4 +86,13 @@ button {
 }
 p {
     max-width: 70ch;
+    /* flex: 0 0 50%; */
+    
+}
+#rules-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* flex-direction: column; */
+    /* gap: 50px; */
 }

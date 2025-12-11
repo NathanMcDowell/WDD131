@@ -26,7 +26,7 @@
                 <input type="text" name="char-name" id="char-name" required>
             </div>
             <div>
-                <label for="hp">HP</label>
+                <label for="char-hp">HP</label>
                 <input type="text" name="hp" id="char-hp" required>
             </div>
             <div>
@@ -37,10 +37,20 @@
                 <label for="resistances">Resistances</label>
                 <select name="resistances" id="resistances">
                     <option value="">[Choose]</option>
-                    <option value="bludgeoning">Bludgeoning</option>
-                    <option value="piercing">Piercing</option>
-                    <option value="slashing">Slashing</option>
-                    <option value="thunder">Thunder</option>
+                    <option value="B-P-S">Bl, Pi, Sl</option>
+                    <option value="Acid">acid</option>
+                    <option value="Bludgeoning">Bludgeoning</option>
+                    <option value="Cold">Cold</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Force">Force</option>
+                    <option value="Lightning">Lightning</option>
+                    <option value="Necrotic">Necrotic</option>
+                    <option value="Piercing">Piercing</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Slashing">Slashing</option>
+                    <option value="Thunder">Thunder</option>
                 </select>
             </div>
             <button id="submit-button">Submit</button>
@@ -48,10 +58,26 @@
         </div>
         <div id="character-tracker">
             <div id="damage-setter">
-                <label for="damage">Damage:</label>
+                <label for="damage-input">Damage:</label>
                 <input type="text" name="damage" id="damage-input">
                 <label for="damage-type">Damage Type:</label>
-                <input type="text" name="damage-type" id="damage-type">
+                <select name="damage-type" id="damage-type">
+                    <option value="">[Choose]</option>
+                    <option value="B-P-S">Bl, Pi, Sl</option>
+                    <option value="Acid">acid</option>
+                    <option value="Bludgeoning">Bludgeoning</option>
+                    <option value="Cold">Cold</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Force">Force</option>
+                    <option value="Lightning">Lightning</option>
+                    <option value="Necrotic">Necrotic</option>
+                    <option value="Piercing">Piercing</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Psychic">Psychic</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Slashing">Slashing</option>
+                    <option value="Thunder">Thunder</option>
+                </select>
             </div>
             
             <table id="initiative-list">
