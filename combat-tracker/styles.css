@@ -38,7 +38,7 @@ a {
     color: var(--accent-color);
 }
 div {
-    border: 1px darkorange solid;
+    /* border: 1px darkorange solid; */
 }
 #initiative-list {
     border: none;
