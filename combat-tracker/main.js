@@ -36,7 +36,8 @@ function initiativeHtmlMaker()
         <td>${character.hp}</td>
         <td>${character.resistances}</td>
         <td>${character.roll}</td> 
-        </tr>`// Delete the above line for the final part.
+        <td><button class="delete-button ${character.name}" >Delete</button></td>
+        </tr>`// Delete the roll line for the final part.
     })
     html += `</tbody>`;
     return html;
@@ -74,6 +75,28 @@ function deleteAll()
     clearInputs();
     submitHandler();
 }
+function buttonHandler(event)
+{
+    if (event.target.classList.contains("damage-button") || event.target.classList.contains("heal-button"))
+    {
+        hpHandler(event);
+    } else if (event.target.classList.contains("delete-button"))
+    {
+        deleteHandler(event)
+    }
+}
+function deleteHandler(event)
+{
+    const allItems = Object.entries(localStorage);
+    allItems.slice().reverse().forEach(([key, value]) => {
+        const character = JSON.parse(value)
+        if(event.target.classList.contains(character.name))
+        {
+            localStorage.removeItem(character.name);
+            trackerBox.innerHTML = initiativeHtmlMaker();
+        }
+    })
+}
 function hpHandler(event)
 {
     let isDamage = true;
@@ -84,13 +107,16 @@ function hpHandler(event)
     }
     
     let damage = document.querySelector("#damage-input").value;
-    if (!isDamage)
-    {
-        damage *= -1;
-    }
+    
+    if (!isDamage){damage *= -1;} // Inverts for healing
+
     const allItems = Object.entries(localStorage);
+    const damageType = document.querySelector("#damage-type").value;
     allItems.slice().reverse().forEach(([key, value]) => {
-        const character = JSON.parse(value)
+        const character = JSON.parse(value);
+        const resistance = character.resistances;
+        if (damageType == resistance && isDamage){damage /= 2} // Halves for resistance
+
         if(event.target.classList.contains(character.name))
         {
             character.hp -= damage;
@@ -102,6 +128,6 @@ function hpHandler(event)
 }
 document.querySelector("#submit-button").addEventListener("click", submitHandler)
 document.querySelector("#reset-button").addEventListener("click", deleteAll)
-trackerBox.addEventListener("click", hpHandler)
+trackerBox.addEventListener("click", buttonHandler)
 
 trackerBox.innerHTML = initiativeHtmlMaker();
