@@ -15,7 +15,7 @@ main{
     padding: 5px;
 }
 header {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--primary-color);
     display: flex;
     margin-bottom: 20px;
     background-color: var(--secondary-color);
@@ -55,6 +55,9 @@ td, th {
     align-items: center;
     padding: 5px;
 }
+#submit-button, #reset-button {
+    align-self: center;
+}
 #character-creation {
     display: flex;
     gap: 10px;
@@ -70,14 +73,17 @@ td, th {
     border-bottom: 1px solid var(--primary-color);
 }
 
-#hp, #dex-roll {
+#char-hp, #dex-roll {
     width: 50px;
 }
 button {
     height: 25px;
-    
-}
+    font-family: "Aldritch", monospace;
 
+}
+select {
+    font-family: "Aldritch", monospace;
+}
 /* Rules Page CSS */
 #players-handbook-cover {
     width: 200px;

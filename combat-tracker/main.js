@@ -1,14 +1,5 @@
-const character = {
-    name: "John the Barbarian",
-    hp: 20,
-    roll: 13,
-    resistances: []
-};
-
-
 
 const trackerBox = document.querySelector("#initiative-list")
-// trackerBox.innerHTML = localStorage.getItem('John the Barbarian')
 
 function initiativeHtmlMaker()
 {
@@ -35,14 +26,12 @@ function initiativeHtmlMaker()
         <td>${character.name}</td>
         <td>${character.hp}</td>
         <td>${character.resistances}</td>
-        <td>${character.roll}</td> 
         <td><button class="delete-button ${character.name}" >Delete</button></td>
         </tr>`// Delete the roll line for the final part.
     })
     html += `</tbody>`;
     return html;
 }
-
 function submitHandler()
 {
     const name = document.querySelector("#char-name").value;
@@ -51,12 +40,10 @@ function submitHandler()
     const resistances = document.querySelector("#resistances").value;
     const character = {name, hp, roll, resistances};
 
-    // console.log(character);
     if(name != ""){
         localStorage.setItem(name, JSON.stringify(character));
     }
-    
-    
+
     trackerBox.innerHTML = initiativeHtmlMaker();
     clearInputs();
 }
