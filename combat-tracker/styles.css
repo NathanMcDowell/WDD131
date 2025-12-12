@@ -73,7 +73,7 @@ td, th {
     border-bottom: 1px solid var(--primary-color);
 }
 
-#char-hp, #dex-roll {
+#char-hp, #dex-roll, #damage-input {
     width: 50px;
 }
 button {
@@ -106,6 +106,7 @@ p {
     .health-buttons {
         display: flex;
         flex-direction: column;
+        gap: 2px;
     }
     nav ul {
         display: flex;
