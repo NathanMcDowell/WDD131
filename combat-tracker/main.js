@@ -21,13 +21,13 @@ function initiativeHtmlMaker()
     allItems.slice().forEach(([key, value]) => {
         const character = JSON.parse(value)
         html += `<tr>
-        <td><button class="damage-button ${character.name}">Damage</button></td>
-        <td><button class="heal-button ${character.name}" >Heal</button></td>
+        <td class="health-buttons"><button class="damage-button ${character.name}">Damage</button>
+        <button class="heal-button ${character.name}" >Heal</button></td>
         <td>${character.name}</td>
         <td>${character.hp}</td>
         <td>${character.resistances}</td>
         <td><button class="delete-button ${character.name}" >Delete</button></td>
-        </tr>`// Delete the roll line for the final part.
+        </tr>`
     })
     html += `</tbody>`;
     return html;

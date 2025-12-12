@@ -37,8 +37,8 @@ li{
 a {
     color: var(--accent-color);
 }
-div {
-    /* border: 1px darkorange solid; */
+html, body {
+    overflow-x: hidden;
 }
 #initiative-list {
     border: none;
@@ -46,7 +46,6 @@ div {
     height: auto;
 }
 td, th {
-    vertical-align: top;
     padding-right: 10px;
 }
 #character-creation div {
@@ -60,6 +59,7 @@ td, th {
 }
 #character-creation {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
     margin-bottom: 10px;
@@ -101,4 +101,16 @@ p {
     justify-content: space-around;
     /* flex-direction: column; */
     /* gap: 50px; */
+}
+@media screen and (max-width: 445px) {
+    .health-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    nav ul {
+        display: flex;
+        gap: 10px
+        ;
+    }
+    
 }
