@@ -7,7 +7,6 @@ function initiativeHtmlMaker()
     `<thead>
         <tr>
             <th></th>
-            <th></th>
             <th>Name</th>
             <th>HP</th>
             <th>Resistances</th>
